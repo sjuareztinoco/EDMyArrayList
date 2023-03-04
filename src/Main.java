@@ -3,34 +3,53 @@ public class Main {
 
     public static Scanner dato = new Scanner(System.in);
     public static Scanner datoString = new Scanner(System.in);
+    public static ArrayListPersonalizada<Integer> miArrayList = new ArrayListPersonalizada<>();
     public static void main(String[] args) {
-        int opc;
+        int opc, pos, valor;
         do{
             opc=menu();
             switch(opc){
                 case 1:
-                    //agregarElemento();
+                    System.out.println("Introduce un nuevo elemento:");
+                    valor = dato.nextInt();
+                    miArrayList.agregarElemento(valor);
                     break;
                 case 2:
-                    //eliminarElemento();
+                    System.out.println("Introduce la posicion:");
+                    pos = dato.nextInt();
+                    miArrayList.eliminarElemento(pos);
                     break;
                 case 3:
-                    //modificarElemento();
+                    System.out.println("Introduce la posicion:");
+                    pos = dato.nextInt();
+                    System.out.println("Introduce el nuevo valor:");
+                    valor = dato.nextInt();
+                    miArrayList.modificarElemento(pos, valor);
                     break;
                 case 4:
-                    //insertarElemento();
+                    System.out.println("Introduce la posicion:");
+                    pos = dato.nextInt();
+                    System.out.println("Introduce el nuevo valor:");
+                    valor = dato.nextInt();
+                    miArrayList.insertarElemento(pos,valor);
                     break;
                 case 5:
-                    //obtenerValor();
+                    System.out.println("Introduce la posicion:");
+                    pos = dato.nextInt();
+                    System.out.println(miArrayList.obtenerValor(pos));
                     break;
                 case 6:
-                    //tamanoArreglo();
+                    System.out.println("El tamaño del arreglo:");
+                    System.out.println(miArrayList.tamanoArreglo());
                     break;
                 case 7:
-                    //limpiarArreglo();
+                    miArrayList.limpiarArreglo();
+                    System.out.println("El arreglo ha sido limpiado");
+                    System.out.println("Tamaño actual de "+miArrayList.tamanoArreglo());
                     break;
                 case 8:
-                    //imprimirArreglo();
+                    System.out.println("Arreglo:");
+                    System.out.println(miArrayList);
                     break;
                 case 9:
                     System.out.println("...bye!");
